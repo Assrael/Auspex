@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgrtkc5o3jc2s"]
+
+[ext_resource type="Script" uid="uid://d3l2wqi3ls16f" path="res://_Game/Programming/Sai/Inventory/TestScene/camera_3d.gd" id="1_6udfk"]
+
+[sub_resource type="Environment" id="Environment_n6cne"]
+ssao_enabled = true
+ssao_radius = 2.85
+ssao_intensity = 3.15
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_6udfk"]
+
+[sub_resource type="Compositor" id="Compositor_62vbm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8fmty"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xhsku"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_n6cne")
+camera_attributes = SubResource("CameraAttributesPractical_6udfk")
+compositor = SubResource("Compositor_62vbm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.598843, 0.760722, -0.250376, -0.206186, 0.448539, 0.869655, 0.773869, -0.469163, 0.425455, -8.40856, 13.344, 0)
+light_indirect_energy = 0.38
+shadow_enabled = true
+shadow_normal_bias = 4.141
+shadow_blur = 0.899
+
+[node name="SB_Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SB_Floor"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_8fmty")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SB_Floor/CollisionShape3D"]
+transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_xhsku")
+skeleton = NodePath("../..")
+
+[node name="SB_Wall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, -10)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SB_Wall"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_8fmty")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SB_Wall/CollisionShape3D"]
+transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_xhsku")
+skeleton = NodePath("../..")
+
+[node name="SB_Wall2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 10)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SB_Wall2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_8fmty")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SB_Wall2/CollisionShape3D"]
+transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_xhsku")
+skeleton = NodePath("../..")
+
+[node name="SB_Wall3" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -10, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SB_Wall3"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_8fmty")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SB_Wall3/CollisionShape3D"]
+transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_xhsku")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(2.70443e-08, -0.420149, 0.907455, 1.25214e-08, 0.907455, 0.420149, -1, 0, 2.98023e-08, 9.38107, 4.7639, -0.915312)
+script = ExtResource("1_6udfk")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0fooce00hg00"]
+
+[ext_resource type="Script" uid="uid://cn61tllme65e7" path="res://_Game/Programming/Sai/Inventory/TestScene/pointer_ball.gd" id="1_cg6ea"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5yrs"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_cg6ea"]
+material = SubResource("StandardMaterial3D_f5yrs")
+
+[node name="PointerBall" type="Node3D"]
+script = ExtResource("1_cg6ea")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_cg6ea")
