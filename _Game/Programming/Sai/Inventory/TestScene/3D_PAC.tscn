@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cgrtkc5o3jc2s"]
 
-[ext_resource type="Script" uid="uid://d3l2wqi3ls16f" path="res://_Game/Programming/Sai/Inventory/TestScene/camera_3d.gd" id="1_6udfk"]
+[ext_resource type="Script" uid="uid://ioqkgrua158v" path="res://_Game/Programming/Sai/Inventory/TestScene/PlayerInteraction.gd" id="1_6udfk"]
 
 [sub_resource type="Environment" id="Environment_n6cne"]
 ssao_enabled = true
@@ -80,3 +80,4 @@ skeleton = NodePath("../..")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(2.70443e-08, -0.420149, 0.907455, 1.25214e-08, 0.907455, 0.420149, -1, 0, 2.98023e-08, 9.38107, 4.7639, -0.915312)
 script = ExtResource("1_6udfk")
+edgeRotationEnabled = false
