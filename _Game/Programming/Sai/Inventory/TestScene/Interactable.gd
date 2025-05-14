@@ -1,4 +1,5 @@
 extends StaticBody3D
+class_name Interactable
 
 # --- Common Interactable Properties (Optional) ---
 @export var interaction_prompt : String = "Interact" # e.g., text to show on hover
